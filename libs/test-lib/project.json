@@ -19,7 +19,7 @@
       }
     },
     "publish": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "command": "node tools/scripts/publish.mjs test-lib {args.ver} {args.tag}"
       },
@@ -39,7 +39,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/test-lib"],
+      "outputs": ["{workspaceRoot}/coverage/libs/test-lib"],
       "options": {
         "jestConfig": "libs/test-lib/jest.config.ts",
         "passWithNoTests": true
